@@ -98,12 +98,27 @@ World::render_scene(void) const {
 	float		zw		= 100.0;				// hardwired in
 
 	ray.d = Vector3D(0, 0, -1);
+
+	// calculate increase so we restrict x & y to [0, 3.79];
+	float max = 3.79f;
+	float hInc = max / hres;
+	float vInc = max / vres;
 	
 	for (int r = 0; r < vres; r++)			// up
 		for (int c = 0; c <= hres; c++) {	// across 					
 			ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw);
-			pixel_color = tracer_ptr->trace_ray(ray);
+
+			// calculate pixel color from function
+			float currX = c * hInc;
+			float currY = r * vInc;
+			float result = (1 + sin(currX * currX * currY * currY)) / 2;
+		
+			pixel_color = RGBColor(result, result, result);
+
+			//pixel_color = tracer_ptr->trace_ray(ray);
 			display_pixel(r, c, pixel_color);
+
+
 		}	
 }  
 

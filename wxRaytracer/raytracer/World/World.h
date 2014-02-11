@@ -26,7 +26,6 @@
 #include "Light.h"
 #include "Ambient.h"
 
-
 using namespace std;
 
 class RenderThread; 	//part of skeleton - wxRaytracer.h

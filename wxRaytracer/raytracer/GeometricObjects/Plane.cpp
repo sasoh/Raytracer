@@ -66,7 +66,7 @@ Plane::~Plane(void)
 
 bool 															 
 Plane::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {	
-	float t = (a - ray.o) * n / (ray.d * n); 
+	float t = static_cast<float>((a - ray.o) * n / (ray.d * n)); 
 														
 	if (t > kEpsilon) {
 		tmin = t;

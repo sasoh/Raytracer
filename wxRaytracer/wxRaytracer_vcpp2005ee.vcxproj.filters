@@ -81,9 +81,6 @@
     <ClCompile Include="raytracer\Materials\Matte.cpp">
       <Filter>Materials</Filter>
     </ClCompile>
-    <ClCompile Include="raytracer\World\ViewPlane.cpp">
-      <Filter>World</Filter>
-    </ClCompile>
     <ClCompile Include="raytracer\World\World.cpp">
       <Filter>World</Filter>
     </ClCompile>
@@ -125,6 +122,9 @@
     </ClCompile>
     <ClCompile Include="raytracer\Tracers\Tracer.cpp">
       <Filter>Tracers</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\World\ViewPlane.cpp">
+      <Filter>World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

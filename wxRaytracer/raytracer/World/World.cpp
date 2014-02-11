@@ -40,7 +40,6 @@
 
 #include "BuildShadedObjects.cpp"
 
-
 // -------------------------------------------------------------------- default constructor
 
 // tracer_ptr is set to NULL because the build functions will always construct the appropriate tracer
@@ -117,7 +116,6 @@ World::render_scene(void) const {
 
 			//pixel_color = tracer_ptr->trace_ray(ray);
 			display_pixel(r, c, pixel_color);
-
 
 		}	
 }  

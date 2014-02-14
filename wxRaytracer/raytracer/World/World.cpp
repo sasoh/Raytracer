@@ -103,16 +103,31 @@ World::render_scene(void) const {
 	float hInc = max / hres;
 	float vInc = max / vres;
 	
+	int sampleCount = static_cast<int>(sqrt(static_cast<float>(vp.num_samples)));
+	Point2D currentSamplePoint;
+
 	for (int r = 0; r < vres; r++)			// up
 		for (int c = 0; c <= hres; c++) {	// across 					
-			ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw);
+			pixel_color = black;
+			
+			for (int i = 0; i < sampleCount; ++i) {
+				for (int j = 0; j < sampleCount; ++j) {
+					currentSamplePoint.x = s * (c - hres / 2.0 + (j + 0.5) / sampleCount);
+					currentSamplePoint.y = s * (r - vres / 2.0 + (i + 0.5) / sampleCount);
+					ray.o = Point3D(currentSamplePoint.x, currentSamplePoint.y, zw);
+					
+					// calculate pixel color from function
+					float currX = currentSamplePoint.x;
+					float currY = currentSamplePoint.y;
+					float result = (1 + sin(currX * currX * currY * currY)) / 2;
 
-			// calculate pixel color from function
-			float currX = c * hInc;
-			float currY = r * vInc;
-			float result = (1 + sin(currX * currX * currY * currY)) / 2;
-		
-			pixel_color = RGBColor(result, result, result);
+					//pixel_color += RGBColor(result, result, result);
+					pixel_color += tracer_ptr->trace_ray(ray);
+				}
+			}
+			
+			pixel_color /= vp.num_samples;
+			//ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw);
 
 			//pixel_color = tracer_ptr->trace_ray(ray);
 			display_pixel(r, c, pixel_color);

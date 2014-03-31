@@ -126,6 +126,12 @@
     <ClCompile Include="raytracer\World\ViewPlane.cpp">
       <Filter>World</Filter>
     </ClCompile>
+    <ClCompile Include="RegularSampler.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h">
@@ -214,6 +220,12 @@
     </ClInclude>
     <ClInclude Include="raytracer\Tracers\Tracer.h">
       <Filter>Tracers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sampler.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="RegularSampler.h">
+      <Filter>Samplers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

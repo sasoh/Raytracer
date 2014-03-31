@@ -151,6 +151,8 @@
     <ClCompile Include="raytracer\Tracers\RayCast.cpp" />
     <ClCompile Include="raytracer\Tracers\SingleSphere.cpp" />
     <ClCompile Include="raytracer\Tracers\Tracer.cpp" />
+    <ClCompile Include="RegularSampler.cpp" />
+    <ClCompile Include="Sampler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h" />
@@ -182,6 +184,8 @@
     <ClInclude Include="raytracer\Tracers\RayCast.h" />
     <ClInclude Include="raytracer\Tracers\SingleSphere.h" />
     <ClInclude Include="raytracer\Tracers\Tracer.h" />
+    <ClInclude Include="RegularSampler.h" />
+    <ClInclude Include="Sampler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

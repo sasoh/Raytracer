@@ -1,6 +1,8 @@
 #ifndef __VIEW_PLANE__
 #define __VIEW_PLANE__
 
+#include "RegularSampler.h"
+
 //-------------------------------------------------------------------------------------- class ViewPlane
 
 class ViewPlane {
@@ -9,40 +11,22 @@ class ViewPlane {
 		int 			vres;   					// vertical image resolution
 		float			s;							// pixel size
 		int				num_samples;				// number of samples per pixel
-		
 		float			gamma;						// gamma correction factor
 		float			inv_gamma;					// the inverse of the gamma correction factor
 		bool			show_out_of_gamut;			// display red if RGBColor out of gamut
-		
-									
-	
+		Sampler			*sampler;
 	public:
-	
 		ViewPlane();   								// default Constructor
-				
 		ViewPlane(const ViewPlane& vp);				// copy constructor
-
-		ViewPlane& operator= (const ViewPlane& rhs);		// assignment operator
-		
-		~ViewPlane();   							// destructor
-						
-		void 													
-		set_hres(const int h_res);
-		
-		void 													
-		set_vres(const int v_res);
-				
-		void
-		set_pixel_size(const float size);
-		
-		void
-		set_gamma(const float g);
-		
-		void
-		set_gamut_display(const bool show);	
-		
-		void
-		set_samples(const int n);			
+		ViewPlane& operator= (const ViewPlane& rhs);// assignment operator
+		~ViewPlane();   							// destructor			
+		void set_hres(const int h_res);
+		void set_vres(const int v_res);	
+		void set_pixel_size(const float size);
+		void set_gamma(const float g);
+		void set_gamut_display(const bool show);	
+		void set_samples(const int n);
+		void set_sampler(Sampler *new_sampler);
 };
 
 
@@ -94,6 +78,17 @@ ViewPlane::set_gamut_display(const bool show) {
 inline void
 ViewPlane::set_samples(const int n) {
 	num_samples = n;
+
+	if (sampler != NULL) {
+		delete sampler;
+		sampler = NULL;
+	}
+
+	//if (num_samples > 1) {
+	//	// multi jittered?
+	//} else {
+		sampler = new RegularSampler(1);
+	//}
 }
 
 #endif

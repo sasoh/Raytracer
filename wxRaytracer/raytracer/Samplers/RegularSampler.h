@@ -9,7 +9,7 @@ public:
 	RegularSampler(int samples);
 	~RegularSampler();
 	RegularSampler& operator= (const RegularSampler& rhs);
-private:
+//private:
 	virtual void generate_samples();		// generate sample patterns in an unit square
 	void setup_shuffled_indices();			// set up the randomly shuffled indices
 	void shuffle_samples();					// randomly shuffle the samples in each pattern

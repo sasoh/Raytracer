@@ -16,6 +16,7 @@ public:
 	void setup_shuffled_indices();			// set up the randomly shuffled indices
 	void shuffle_samples();					// randomly shuffle the samples in each pattern
 	Point2D sample_unit_square();			// get next sample on unit square
+	int get_num_samples() const;
 protected:
 	int num_samples;						// number of sample points in a pattern
 	int num_sets;							// number of sample sets (patterns) stored

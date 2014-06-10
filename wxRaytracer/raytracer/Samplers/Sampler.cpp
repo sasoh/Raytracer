@@ -29,3 +29,35 @@ Sampler& Sampler::operator= (const Sampler& rhs) {
 
 	return *this;
 }
+
+int Sampler::get_num_samples() const {
+	return num_samples;
+}
+
+void Sampler::generate_samples()
+{
+
+	// should be overriden
+
+}
+
+void Sampler::setup_shuffled_indices()
+{
+	
+	// should be overriden
+
+}
+
+void Sampler::shuffle_samples()
+{
+
+	// should be overriden
+
+}
+
+Point2D Sampler::sample_unit_square()
+{
+
+	return Point2D(0, 0);
+
+}

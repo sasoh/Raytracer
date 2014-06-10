@@ -136,6 +136,8 @@
     <ClCompile Include="raytracer\Lights\Light.cpp" />
     <ClCompile Include="raytracer\Materials\Material.cpp" />
     <ClCompile Include="raytracer\Materials\Matte.cpp" />
+    <ClCompile Include="raytracer\Samplers\RegularSampler.cpp" />
+    <ClCompile Include="raytracer\Samplers\Sampler.cpp" />
     <ClCompile Include="raytracer\World\ViewPlane.cpp" />
     <ClCompile Include="raytracer\World\World.cpp" />
     <ClCompile Include="raytracer\Utilities\Matrix.cpp" />
@@ -151,8 +153,6 @@
     <ClCompile Include="raytracer\Tracers\RayCast.cpp" />
     <ClCompile Include="raytracer\Tracers\SingleSphere.cpp" />
     <ClCompile Include="raytracer\Tracers\Tracer.cpp" />
-    <ClCompile Include="RegularSampler.cpp" />
-    <ClCompile Include="Sampler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h" />
@@ -167,6 +167,8 @@
     <ClInclude Include="raytracer\Lights\Light.h" />
     <ClInclude Include="raytracer\Materials\Material.h" />
     <ClInclude Include="raytracer\Materials\Matte.h" />
+    <ClInclude Include="raytracer\Samplers\RegularSampler.h" />
+    <ClInclude Include="raytracer\Samplers\Sampler.h" />
     <ClInclude Include="raytracer\World\ViewPlane.h" />
     <ClInclude Include="raytracer\World\World.h" />
     <ClInclude Include="raytracer\Utilities\Constants.h" />
@@ -184,8 +186,6 @@
     <ClInclude Include="raytracer\Tracers\RayCast.h" />
     <ClInclude Include="raytracer\Tracers\SingleSphere.h" />
     <ClInclude Include="raytracer\Tracers\Tracer.h" />
-    <ClInclude Include="RegularSampler.h" />
-    <ClInclude Include="Sampler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

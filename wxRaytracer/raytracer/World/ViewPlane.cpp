@@ -11,7 +11,8 @@ ViewPlane::ViewPlane(void)
 		num_samples(1),
 		gamma(1.0),
 		inv_gamma(1.0),
-		show_out_of_gamut(false)
+		show_out_of_gamut(false),
+		sampler(new RegularSampler(1))
 {}
 
 
@@ -24,7 +25,8 @@ ViewPlane::ViewPlane(const ViewPlane& vp)
 		num_samples(vp.num_samples),
 		gamma(vp.gamma),
 		inv_gamma(vp.inv_gamma),
-		show_out_of_gamut(vp.show_out_of_gamut)
+		show_out_of_gamut(vp.show_out_of_gamut),
+		sampler(new RegularSampler(1))
 {}
 
 
@@ -42,6 +44,7 @@ ViewPlane::operator= (const ViewPlane& rhs) {
 	gamma				= rhs.gamma;
 	inv_gamma			= rhs.inv_gamma;
 	show_out_of_gamut	= rhs.show_out_of_gamut;
+	sampler				= rhs.sampler;
 	
 	return (*this);
 }
@@ -49,16 +52,18 @@ ViewPlane::operator= (const ViewPlane& rhs) {
 
 // -------------------------------------------------------------- destructor
 
-ViewPlane::~ViewPlane(void) {}
+ViewPlane::~ViewPlane(void) {
+	if (sampler != NULL) {
+		delete sampler;
+	}
+}
 
+void ViewPlane::set_sampler(Sampler *new_sampler) {
+	if (sampler != NULL) {
+		delete sampler;
+		sampler = NULL;
+	}
 
-
-
-
-
-	
-
-
-
-
-
+	num_samples = new_sampler->get_num_samples();
+	sampler = new_sampler;
+}

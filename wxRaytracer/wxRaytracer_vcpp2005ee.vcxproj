@@ -136,6 +136,7 @@
     <ClCompile Include="raytracer\Lights\Light.cpp" />
     <ClCompile Include="raytracer\Materials\Material.cpp" />
     <ClCompile Include="raytracer\Materials\Matte.cpp" />
+    <ClCompile Include="raytracer\Samplers\MultijitteredSampler.cpp" />
     <ClCompile Include="raytracer\Samplers\RegularSampler.cpp" />
     <ClCompile Include="raytracer\Samplers\Sampler.cpp" />
     <ClCompile Include="raytracer\World\ViewPlane.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="raytracer\Lights\Light.h" />
     <ClInclude Include="raytracer\Materials\Material.h" />
     <ClInclude Include="raytracer\Materials\Matte.h" />
+    <ClInclude Include="raytracer\Samplers\MultijitteredSampler.h" />
     <ClInclude Include="raytracer\Samplers\RegularSampler.h" />
     <ClInclude Include="raytracer\Samplers\Sampler.h" />
     <ClInclude Include="raytracer\World\ViewPlane.h" />

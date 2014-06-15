@@ -4,7 +4,7 @@
 	
 // ---------------------------------------------------------------- default constructor	
 						
-ViewPlane::ViewPlane(void)							
+ViewPlane::ViewPlane()							
 	: 	hres(400), 
 		vres(400),
 		s(1.0),

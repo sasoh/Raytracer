@@ -132,6 +132,9 @@
     <ClCompile Include="raytracer\Samplers\RegularSampler.cpp">
       <Filter>Samplers</Filter>
     </ClCompile>
+    <ClCompile Include="raytracer\Samplers\MultijitteredSampler.cpp">
+      <Filter>Samplers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h">
@@ -225,6 +228,9 @@
       <Filter>Samplers</Filter>
     </ClInclude>
     <ClInclude Include="raytracer\Samplers\Sampler.h">
+      <Filter>Samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Samplers\MultijitteredSampler.h">
       <Filter>Samplers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,7 @@
 
 void World::build(void) {
 
-	int num_samples = 16; 
+	int num_samples = 8; 
 	
 	// view plane  
 	  

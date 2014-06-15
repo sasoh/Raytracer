@@ -5,12 +5,11 @@ RegularSampler::RegularSampler(): Sampler() {
 }
 
 RegularSampler::RegularSampler(int samples): Sampler(samples) {
-	
+
 }
 
 RegularSampler::~RegularSampler() {
-	samples.clear();
-	shuffled_indices.clear();
+
 }
 
 RegularSampler& RegularSampler::operator= (const RegularSampler& rhs) {

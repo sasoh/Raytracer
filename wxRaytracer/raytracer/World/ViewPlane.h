@@ -2,6 +2,9 @@
 #define __VIEW_PLANE__
 
 #include "RegularSampler.h"
+#include "MultijitteredSampler.h"
+#include <cstdlib>
+#include <ctime>
 
 //-------------------------------------------------------------------------------------- class ViewPlane
 
@@ -77,6 +80,8 @@ ViewPlane::set_gamut_display(const bool show) {
 
 inline void
 ViewPlane::set_samples(const int n) {
+	srand(static_cast<unsigned int>(time(NULL)));
+
 	num_samples = n;
 
 	if (sampler != NULL) {
@@ -84,11 +89,11 @@ ViewPlane::set_samples(const int n) {
 		sampler = NULL;
 	}
 
-	//if (num_samples > 1) {
-	//	// multi jittered?
-	//} else {
+	if (num_samples > 1) {
+		sampler = new MultijitteredSampler(num_samples);
+	} else {
 		sampler = new RegularSampler(1);
-	//}
+	}
 }
 
 #endif
